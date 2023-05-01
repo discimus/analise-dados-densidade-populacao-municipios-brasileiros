@@ -14,7 +14,7 @@ Também pude observar que a maior parte dos municípios tem menos de 20 mil habi
 
 E analisando a distribuição geográfica dos municípios é possível observar que eles estão mais concentrados nas regiões Sul, Sudeste e Nordeste.
 
-![image](https://user-images.githubusercontent.com/46648240/235492850-24eb8077-1b89-4dae-b30c-95e3914bd446.png)
+![image](https://user-images.githubusercontent.com/46648240/235496667-5c12587b-8243-417f-98b5-0836d8bad19b.png)
 
 Sendo majoritariamente pouco populosos
 
