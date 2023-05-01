@@ -1,0 +1,171 @@
+{
+ "cells": [
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "39d30404-b3a5-4499-93b8-28f3fc271c66",
+   "metadata": {
+    "tags": []
+   },
+   "outputs": [],
+   "source": [
+    "import numpy as np\n",
+    "import pandas as pd\n",
+    "import matplotlib.pyplot as plt"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "9098d854-7ffc-48cf-99c8-e65d0e46150c",
+   "metadata": {
+    "tags": []
+   },
+   "outputs": [],
+   "source": [
+    "populacoes = pd.read_excel('./POP2022_Municipios.xls', sheet_name='Municípios', header=1)[:5570]\n",
+    "populacoes = populacoes[populacoes['POPULAÇÃO'].apply(lambda t: '(' not in str(t))]\n",
+    "populacoes['POPULAÇÃO'] = pd.to_numeric(populacoes['POPULAÇÃO'], downcast='integer')\n",
+    "\n",
+    "populacoes.describe()"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "4896c4ef-5647-4c10-8070-57639960d0a8",
+   "metadata": {
+    "tags": []
+   },
+   "outputs": [],
+   "source": [
+    "plt.bar(populacoes.UF, populacoes.POPULAÇÃO.sor)"
+   ]
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "Python 3 (ipykernel)",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.10.10"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 5
+}
+d>\n",
+       "      <td>15875.159747</td>\n",
+       "      <td>3.723147e+04</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>std</th>\n",
+       "      <td>9.774542</td>\n",
+       "      <td>16014.067884</td>\n",
+       "      <td>2.188707e+05</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>min</th>\n",
+       "      <td>11.000000</td>\n",
+       "      <td>13.000000</td>\n",
+       "      <td>8.360000e+02</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>25%</th>\n",
+       "      <td>25.000000</td>\n",
+       "      <td>4589.750000</td>\n",
+       "      <td>5.257750e+03</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>50%</th>\n",
+       "      <td>31.000000</td>\n",
+       "      <td>10411.000000</td>\n",
+       "      <td>1.106850e+04</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>75%</th>\n",
+       "      <td>41.000000</td>\n",
+       "      <td>20904.250000</td>\n",
+       "      <td>2.455300e+04</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>max</th>\n",
+       "      <td>53.000000</td>\n",
+       "      <td>72202.000000</td>\n",
+       "      <td>1.220018e+07</td>\n",
+       "    </tr>\n",
+       "  </tbody>\n",
+       "</table>\n",
+       "</div>"
+      ],
+      "text/plain": [
+       "           COD. UF    COD. MUNIC     POPULAÇÃO\n",
+       "count  5540.000000   5540.000000  5.540000e+03\n",
+       "mean     32.458123  15875.159747  3.723147e+04\n",
+       "std       9.774542  16014.067884  2.188707e+05\n",
+       "min      11.000000     13.000000  8.360000e+02\n",
+       "25%      25.000000   4589.750000  5.257750e+03\n",
+       "50%      31.000000  10411.000000  1.106850e+04\n",
+       "75%      41.000000  20904.250000  2.455300e+04\n",
+       "max      53.000000  72202.000000  1.220018e+07"
+      ]
+     },
+     "execution_count": 44,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "populacoes = pd.read_excel('./POP2022_Municipios.xls', sheet_name='Municípios', header=1)[:5570]\n",
+    "populacoes = populacoes[populacoes['POPULAÇÃO'].apply(lambda t: '(' not in str(t))]\n",
+    "populacoes['POPULAÇÃO'] = pd.to_numeric(populacoes['POPULAÇÃO'], downcast='integer')\n",
+    "\n",
+    "populacoes.describe()"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "4896c4ef-5647-4c10-8070-57639960d0a8",
+   "metadata": {
+    "tags": []
+   },
+   "outputs": [],
+   "source": [
+    "plt.bar(populacoes.UF, populacoes.POPULAÇÃO.sor)"
+   ]
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "Python 3 (ipykernel)",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.10.10"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 5
+}
